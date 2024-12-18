@@ -1,0 +1,4 @@
+what is diff btw export and export default
+// diff only in inmport statment
+u can give name of fxn without using curly bracket if its is export default maked
+import feed from "./feed";
