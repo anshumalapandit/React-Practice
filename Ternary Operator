@@ -1,0 +1,7 @@
+// Ternary Operator
+// its is used for addition condition
+// in simple words ternary operators are the shortcut way to write if-else condition
+// syntax=> condition ? trueExp :falseExp
+const marks=90;
+const ans=marks>35? "pass":"fail";
+console.log(ans);
