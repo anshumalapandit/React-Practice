@@ -1,0 +1,17 @@
+const a1=[1,2,3,4];
+const a2=[7,9,8];
+const numbers=a1.concat(a2);
+console.log(numbers); //1,2,3,4,7,9,8 
+// but now i also want the numbers which are missing from between
+// one way is: we can create one arr add those value in that then a.concat(a2,a3);
+// but our modern way is: spread operator:  we can add directly in between
+const num2=[...a1,5,6,...a2];
+// also we can use this spread operator with objects
+const ob1={
+    name:"meet"
+};
+const obj2={
+    hobby:["dancing" ,"eating"],
+};
+const user={...ob1,...obj2,youtube:"Geeks"};
+console.log(user);
