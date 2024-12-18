@@ -1,0 +1,16 @@
+const prod=["product1","product2","product3"];
+// this map method return a new arr its does not make any changes in old original
+//this will run each time for every item
+const newArr=prod.map(function(product){
+    return "<li>"+ product+"</li>";
+});
+// same i can do using arrow fxn as there syntax bit long
+const newArrUisngArrow=prod.map((product)=>
+     "<li>"+ product+"</li>");
+
+console.log(newArr);
+console.log(newArrUisngArrow);
+// also using this " " qotes we can use template literals which is very simple
+const newAr_TemplateLiteral=prod.map((product)=>
+    `<li>${product}</li>`);
+console.log(newAr_TemplateLiteral);
