@@ -1,0 +1,35 @@
+// modules 
+// its file that contains code to perform specific Task 
+// it can contain variables , objects,functions etc
+// as our application grow there will be thousands of code so just 
+// instaed of writing long code we divide it into modules
+// using this modules we can make our code organize and super easy to manage
+function post(){
+    console.log("This is post");
+}
+function feed(){
+    console.log("this is feed");
+    post();
+    post();
+    post();
+}
+feed(); 
+// this is just one part of fxn 
+// what if we have more functions or parts than managing the code will not easy
+// so we can divide this code into multiple parts called modules and then we can easily manage our code
+// after using modules :
+import { post } from "./post";
+ function feed(){
+    console.log("this is feed");
+    post();
+    post();
+    post();
+}
+feed(); 
+// post.jsx
+// now we can access this post fxn only inside post.jsx
+// for accessing another modules we have to make it public
+// for making public just add export keyword at the beginning
+export function post(){
+    console.log("This is post");
+}
