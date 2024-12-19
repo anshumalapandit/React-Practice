@@ -1,0 +1,101 @@
+import React from 'react'
+
+const CreateTodo = () => {
+    const task=2;
+    const hideButton=false;
+    const countTask=()=>{
+     return (task==0)? "No task availabe" : `Task: ${task}`;
+    };
+
+  return (
+    <React.Fragment>
+    <h1> {countTask()} </h1>
+    <button disabled={hideButton} value='Add Task'>Add Task</button>
+    </React.Fragment>
+  );
+};
+
+export default CreateTodo
+// State ?
+import React,{useState} from 'react'
+
+const CreateTodo = () => {
+    let task=0;
+    const newArr=useState(0); // this will return an arr // 0 is default value
+    console.log(newArr);
+    const count=newArr[0];
+    const setCount=newArr[1];
+// const newArr=useState(0); // this will return an arr // 0 is default value
+    // console.log(newArr);
+    // const count=newArr[0];
+    // const setCount=newArr[1];
+    const [count,setCount]=useState(0); // improve above 3 line to 1 line => Array desturcting 
+    const handleClick=()=>{
+        task++;
+        setCount(count+1);
+        console.log("ADD Task: 0",task);
+    };
+    
+  return (
+    <React.Fragment>
+    <h1>Tasks:  {task} </h1>
+    <h1>State Changes:  {count} </h1>
+    <button onClick={handleClick} value='Add Task'>Add Task</button>
+    </React.Fragment>
+  );
+};
+// input part :
+import React,{useState} from 'react'
+
+const CreateTodo = () => {
+    const [count,setCount]=useState(0); // improve above 3 line to 1 line => Array desturcting 
+   const [input,setInput] =useState(" ")
+    const handleClick=()=>{
+        setCount(count+1);   
+    };
+    const handleChange=(event)=>{
+      setInput(event.target.value);
+    };
+  return (
+    <React.Fragment>
+    <input type="text" onChange={handleChange} />
+    <h1>State Changes:  {count} </h1>
+    <button onClick={handleClick} value='Add Task'>Add Task</button>
+    <h1>Input is:{input} </h1>
+    </React.Fragment>
+  );
+};
+// map method + how to display list :
+import React,{useState} from 'react'
+
+const CreateTodo = () => {
+    const [count,setCount]=useState(0); // improve above 3 line to 1 line => Array desturcting 
+   const [input,setInput] =useState(" ")
+    const handleClick=()=>{
+        setCount(count+1);   
+    };
+    const handleChange=(event)=>{
+      setInput(event.target.value);
+    };
+    const tasks=["Task1","Task2","Task3","Task4"];
+  return (
+    <React.Fragment>
+    <input type="text" onChange={handleChange} />
+    <h1>State Changes:  {count} </h1>
+    <button onClick={handleClick} value='Add Task'>Add Task</button>
+    <h1>Input is:{input} </h1>
+    <ul>
+         {/* remember when we using map method in react we always need to pass unique key */}
+        {
+            tasks.map(task=>
+                <li key={task}>{task} </li> // u cant display this list again in this application
+            )
+        }
+    </ul>
+    </React.Fragment>
+  );
+};
+
+export default CreateTodo
+export default CreateTodo
+export default CreateTodo
