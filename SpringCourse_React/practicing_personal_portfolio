@@ -1,0 +1,64 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from './assets/vite.svg'
+import heroImg from './assets/hero.png'
+import './App.css'
+
+function App() {
+  const name = "Anshumala Vijay Pandit"
+  const Role= "Aspiring software developer"
+  const description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quas, dolor earum doloribus consequatur dolores praesentium ab quibusdam temporibus suscipit!"
+  const project =[
+    // array of object
+    {
+     projectName:"Ecommerce Project",
+     technologies:"html css javascript aws ",
+     description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis nemo nihil, nostrum corporis eum debitis iusto vero atque repellendus perspiciatis?"
+    },
+    {
+     projectName:"Agentic aI  Project",
+     technologies:"html css javascript aws ",
+     description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis nemo nihil, nostrum corporis eum debitis iusto vero atque repellendus perspiciatis?"
+    },
+    {
+     projectName:"Expense tracker Project",
+     technologies:"Mern stack, aws ",
+     description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis nemo nihil, nostrum corporis eum debitis iusto vero atque repellendus perspiciatis?"
+    }
+  ]
+ return (
+   <>
+   <header className='Header'>
+   <h1> {name} </h1>
+   <h2> {Role}</h2>
+   <h3> {description}</h3>
+   </header>
+
+   <nav className='nav'>
+    <a href='#aboutme'> about me </a>
+    <a href='#projects'> projects </a>
+    <a href='#'> contact </a>
+   </nav>
+
+   <section className='aboutme'>
+     <p>
+      this is me anshu i am very good girl very pretty gurl please hire me i m very hardworking gurl
+      even smarter , give me one chance i will give my best .. please u reader .. 
+     </p>
+   </section>
+
+   <section className='projects'>
+    <h3> This is my project catalog 
+    </h3>
+     {project.map((proj , idx) => (
+       <div key={idx}>
+             <h3>{proj.projectName}</h3>
+             <h4> {proj.technologies}</h4>
+             <p> {proj.description}</p>
+       </div>
+     ))}
+   </section>
+   </>
+ )
+}
+export default App;
