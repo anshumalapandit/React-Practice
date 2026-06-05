@@ -1,0 +1,44 @@
+without :
+import React from 'react'
+
+function Profile(props){
+    
+  const prof={
+    name:"Anshu",
+    age:21
+  }
+  // without destructuing , how u will access data
+  const n=prof.name;
+  const a=prof.age;
+  return (
+    <div>
+      <h3>hello: {props.name} </h3>
+    </div>
+  )
+}
+
+export default Profile
+// with :
+import React from 'react'
+
+function Profile(props){
+    
+  const prof={
+    name:"Anshu",
+    age:21
+  }
+  // without destructuing , how u will access data
+//   const n=prof.name;
+//   const a=prof.age;
+
+// with descturcting , u are unpacking the entire thing 
+const {name,age}=prof;
+  return (
+    <div>
+      <h3>hello: {props.name} </h3>
+    </div>
+  )
+}
+
+
+export default Profile
