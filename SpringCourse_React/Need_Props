@@ -1,0 +1,30 @@
+Need ? 
+Without props, every component would have hardcoded values and couldn't be reused easily.
+e.g 
+
+function App() {
+  return (
+    <div>
+    <div> welcome </div>
+    <Profile/>
+    </div>
+  )
+}
+export default App;
+// 
+import React from 'react'
+
+const Profile = () => {
+    const name="anshu baby";
+  return (
+    <div>
+      <h3>hello {name} </h3>
+    </div>
+  )
+}
+
+export default Profile
+
+
+now we are hardcoding the value of name which is not a good practice, thats why we use props to add dynamic ,
+props  nothing but (properties) are used to pass data from a parent component to a child component.
