@@ -1,0 +1,29 @@
+import React, { useRef, useState } from 'react'
+import './App.css'
+import { useEffect } from 'react';
+const App = () => {
+  const [count , setCount]= useState(0);
+  const previousCount=useRef(count);
+  // function to increment the counter decrement it
+
+  const increment=()=>{
+     return setCount(count+1); // ← This tells React to re-render with count = 1
+  } 
+  const decrement=()=>{
+    return setCount(count-1);
+  }
+  useEffect(()=>{
+    // change the useRef value
+    previousCount.current=count;
+    // always triggers this above line , whenever there is change in count var
+  }, [count])
+  return (
+    <div>
+      <h1>Previous value of counter: {previousCount.current}</h1>
+      <button onClick={increment}>Incremented value is:{count} </button>
+      <button onClick={decrement}>Decrement value is: {count} </button>
+    </div>
+  )
+}
+
+export default App
