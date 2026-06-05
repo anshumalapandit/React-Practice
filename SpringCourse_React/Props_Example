@@ -1,0 +1,24 @@
+import React from 'react'
+
+function Profile(props){
+    // const name="anshu baby";
+  return (
+    <div>
+      <h3>hello: {props.name} </h3>
+    </div>
+  )
+}
+
+export default Profile
+
+function App() {
+  return (
+    <div>
+    <div> welcome </div>
+// you can call as many times u want 
+    <Profile name="Anshu baby"/>
+    <Profile name="Nehu"/>
+    </div>
+  )
+}
+export default App;
