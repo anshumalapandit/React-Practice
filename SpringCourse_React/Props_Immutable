@@ -1,0 +1,14 @@
+import React from 'react'
+
+function Profile(props){
+    // const name="anshu baby";
+    // u will get no output bcoz u cant change props in child 
+    props.name="Changing Props in child"
+  return (
+    <div>
+      <h3>hello: {props.name} </h3>
+    </div>
+  )
+}
+
+export default Profile
