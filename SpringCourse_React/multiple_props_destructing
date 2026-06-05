@@ -1,0 +1,22 @@
+import React from 'react'
+
+function Profile(props) {
+    // desctruting props=> unpackking the propss into various variables
+  const { name, age, isGoodGirl } = props;
+  // imp you cannot define variable into jSX , define before return statement
+  //you can't put JavaScript statements inside HTML tags!
+  return (
+    <>
+      <h1>Hello {name}</h1>
+      <h1>Age: {age}</h1>
+      <h1>Are you good girl? {isGoodGirl ? "Yes I am " : "No i am baddie shh.."}</h1>
+    </>
+  )
+}
+
+export default Profile
+
+// imp :
+Variables are declared in JavaScript scope first
+Then JSX just references those variables inside {}
+JSX can only contain expressions (values), not statements (logic)
